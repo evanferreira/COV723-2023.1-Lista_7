@@ -1,9 +1,0 @@
-# Table of contents
-# Learn more at https://jupyterbook.org/customize/toc.html
-
-format: jb-article
-root: lista7
-sections:
-- file: Lista_7-Q1
-- file: Lista_7-Q2
-- file: Lista_7-Q3
