@@ -1,0 +1,837 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Hidrodinâmica para Engenharia Oceânica - Lista 7 - Ondas Aleatórias</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lista7';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/COPPE_logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/COPPE_logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    COV-723 - Hidrodinâmica para Engenharia Oceânica
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>COV-723 - Hidrodinâmica para Engenharia Oceânica</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista7.html#document-Lista_7-Q1">Espectro de Pierson-Moskowitz Modificado</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista7.html#document-Lista_7-Q2">Espectro JONSWAP (Joint North Sea Wave Project) da Bacia de Campos</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista7.html#document-Lista_7-Q3">Série temporal - Bacia de Campos</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="cov-723-hidrodinamica-para-engenharia-oceanica">
+<h1>COV-723 - Hidrodinâmica para Engenharia Oceânica<a class="headerlink" href="#cov-723-hidrodinamica-para-engenharia-oceanica" title="Permalink to this headline">#</a></h1>
+<p>Autor: Evandro F. de Paula Filho</p>
+<p>Professor: Antônio Fernandes</p>
+<p>Programa de Engenharia Oceânica - Copee/UFRJ - Trimestre 2023.1</p>
+<div style="text-align: justify"> 
+    Este documento compreende a resolução da lista 7 da disciplina de Hidrodinâmica para Engenharia Oceânica ministrada no primeiro trimestre de 2023.1 pelo profº Antonio Carlos Fernandes. 
+</div><div class="toctree-wrapper compound">
+<span id="document-Lista_7-Q1"></span><section class="tex2jax_ignore mathjax_ignore" id="espectro-de-pierson-moskowitz-modificado">
+<h2>Espectro de Pierson-Moskowitz Modificado<a class="headerlink" href="#espectro-de-pierson-moskowitz-modificado" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">find_peaks</span><span class="p">,</span> <span class="n">argrelextrema</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">Hs</span> <span class="o">=</span> <span class="mf">7.8</span> 
+<span class="n">Tz</span> <span class="o">=</span> <span class="mf">9.2</span>
+<span class="n">T1</span> <span class="o">=</span> <span class="mf">1.086</span><span class="o">*</span><span class="n">Tz</span>
+<span class="n">dw</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">dw</span><span class="p">)</span>
+<span class="n">S_w</span> <span class="o">=</span> <span class="p">((</span><span class="mi">173</span><span class="o">*</span><span class="n">Hs</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">**</span><span class="mi">4</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">w</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="mi">692</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">**</span><span class="mi">4</span><span class="p">))</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">S_w</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$S_{\zeta}(\omega)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Espectro de Pierson-Moskowitz Modificado - $H_s$ = </span><span class="si">{Hs}</span><span class="s1"> m e $T_1$ = </span><span class="si">{T1:.2f}</span><span class="s1"> s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Hs</span> <span class="o">=</span> <span class="n">Hs</span><span class="p">,</span> <span class="n">T1</span><span class="o">=</span><span class="n">T1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\omega$, rad/s&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$S_{\zeta}(\omega)$, m²/rads&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">dw</span> <span class="o">=</span> <span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span>
+<span class="n">zeta_w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">S_w</span><span class="o">*</span><span class="n">dw</span><span class="p">)</span>
+<span class="n">zeta_t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">zeta_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">sig_zeta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">T1_ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">T2_ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">elev</span><span class="p">,</span> <span class="n">freq</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">zeta_w</span><span class="p">,</span> <span class="n">w</span><span class="p">):</span>
+        <span class="n">fase</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">elev</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="o">-</span><span class="n">freq</span><span class="o">*</span><span class="n">t</span> <span class="o">+</span> <span class="n">fase</span><span class="p">)</span>
+        <span class="n">zeta_t</span> <span class="o">+=</span> <span class="n">z</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+    <span class="n">peaks</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="n">zeta_t</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+    <span class="n">valleys</span> <span class="o">=</span> <span class="n">argrelextrema</span><span class="p">(</span><span class="n">zeta_t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">less</span><span class="p">)</span>
+    <span class="n">t_ind</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">zeta_t</span><span class="p">)):</span> 
+        <span class="k">if</span> <span class="n">ind</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">zeta_t</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">zeta_t</span><span class="p">[</span><span class="n">ind</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+                <span class="n">t_ind</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
+   
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">zeta_t</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">peaks</span><span class="p">],</span> <span class="n">zeta_t</span><span class="p">[</span><span class="n">peaks</span><span class="p">]</span> <span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">valleys</span><span class="p">],</span> <span class="n">zeta_t</span><span class="p">[</span><span class="n">valleys</span><span class="p">]</span> <span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">t_ind</span><span class="p">],</span> <span class="n">zeta_t</span><span class="p">[</span><span class="n">t_ind</span><span class="p">],</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Série temporal - Elevação da onda - </span><span class="si">{</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">ª simulação&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;t, s&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\zeta(t)$, m&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">zeta_m</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">zeta_t</span><span class="p">[</span><span class="n">peaks</span><span class="p">])</span>
+    <span class="n">sig_zeta</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">zeta_t</span><span class="p">[</span><span class="n">peaks</span><span class="p">])</span>
+    <span class="n">T1_ts</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">t</span><span class="p">[</span><span class="n">peaks</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">peaks</span><span class="p">][</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">peaks</span><span class="p">]))</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>
+    <span class="n">T2_ts</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">t</span><span class="p">[</span><span class="n">t_ind</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">t_ind</span><span class="p">][</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">t_ind</span><span class="p">]))</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>
+    
+<span class="n">T1_spc</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S_w</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S_w</span><span class="o">*</span><span class="n">w</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+<span class="n">T2_spc</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S_w</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S_w</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">w</span><span class="p">)))</span>
+<span class="n">elev_m</span> <span class="o">=</span> <span class="n">Hs</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">sig_elev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S_w</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Espectro&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">elev_m</span><span class="p">,</span> <span class="n">sig_elev</span><span class="p">,</span> <span class="n">T1_spc</span><span class="p">,</span> <span class="n">T2_spc</span><span class="p">]}</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+    <span class="nb">dict</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;Simulação </span><span class="si">{</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">zeta_m</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">sig_zeta</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">T1_ts</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">T2_ts</span><span class="p">[</span><span class="n">n</span><span class="p">]]</span> 
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$\bar{{\zeta}}$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$\sigma_\zeta$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$T_1$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$T_2$&quot;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/a51fb00c5ecf16d36ce49360173a9c5169f38f8370a4c917d011d90a04ff78ad.png" src="_images/a51fb00c5ecf16d36ce49360173a9c5169f38f8370a4c917d011d90a04ff78ad.png" />
+<img alt="_images/4cc048e13f8e9e9126cef0eec3823de180ff1270a04cb2aed6e3a5e6d4a2c628.png" src="_images/4cc048e13f8e9e9126cef0eec3823de180ff1270a04cb2aed6e3a5e6d4a2c628.png" />
+<img alt="_images/87f057e413f213130edca65006a5cf773c482034e0600adae581770d1e2397c5.png" src="_images/87f057e413f213130edca65006a5cf773c482034e0600adae581770d1e2397c5.png" />
+<img alt="_images/9e8a716e2b18af85903ce1bdafd3b2f90df89a8af40e19f1148bd1f3d7e392b6.png" src="_images/9e8a716e2b18af85903ce1bdafd3b2f90df89a8af40e19f1148bd1f3d7e392b6.png" />
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Espectro</th>
+      <th>Simulação 1</th>
+      <th>Simulação 2</th>
+      <th>Simulação 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>$\bar{{\zeta}}$</th>
+      <td>2.295950</td>
+      <td>2.169982</td>
+      <td>2.406037</td>
+      <td>2.729375</td>
+    </tr>
+    <tr>
+      <th>$\sigma_\zeta$</th>
+      <td>1.938888</td>
+      <td>1.401565</td>
+      <td>2.126752</td>
+      <td>2.650422</td>
+    </tr>
+    <tr>
+      <th>$T_1$</th>
+      <td>10.263139</td>
+      <td>7.631053</td>
+      <td>7.100769</td>
+      <td>6.798605</td>
+    </tr>
+    <tr>
+      <th>$T_2$</th>
+      <td>9.745496</td>
+      <td>9.661667</td>
+      <td>8.551471</td>
+      <td>9.930345</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<span id="document-Lista_7-Q2"></span><section class="tex2jax_ignore mathjax_ignore" id="espectro-jonswap-joint-north-sea-wave-project-da-bacia-de-campos">
+<h2>Espectro JONSWAP (Joint North Sea Wave Project) da Bacia de Campos<a class="headerlink" href="#espectro-jonswap-joint-north-sea-wave-project-da-bacia-de-campos" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
+
+<span class="n">Hs</span> <span class="o">=</span> <span class="mf">5.0</span> 
+<span class="n">Tz</span> <span class="o">=</span> <span class="mf">8.0</span>
+<span class="n">Tp</span> <span class="o">=</span> <span class="mf">1.287</span><span class="o">*</span><span class="n">Tz</span>
+<span class="n">gama</span> <span class="o">=</span> <span class="mf">6.4</span><span class="o">*</span><span class="n">Tp</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.491</span><span class="p">)</span>
+<span class="n">dw</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">dw</span><span class="p">)</span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">w</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">S_f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">Tp</span>
+<span class="k">for</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">f</span> <span class="o">==</span> <span class="n">freq</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">freq</span> <span class="o">&lt;=</span> <span class="n">fp</span><span class="p">:</span>
+        <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.07</span>
+        <span class="n">s_f</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">Hs</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">Tp</span> <span class="o">*</span> <span class="p">((</span><span class="n">fp</span><span class="o">/</span><span class="n">freq</span><span class="p">)</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.287</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">gama</span><span class="p">))</span> <span class="o">*</span> 
+               <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.25</span><span class="o">*</span><span class="p">(</span><span class="n">freq</span><span class="o">/</span><span class="n">fp</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">))</span><span class="o">*</span><span class="n">gama</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="o">-</span><span class="p">(</span><span class="n">freq</span><span class="o">-</span><span class="n">fp</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">fp</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.09</span>
+        <span class="n">s_f</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">Hs</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">Tp</span> <span class="o">*</span> <span class="p">((</span><span class="n">fp</span><span class="o">/</span><span class="n">freq</span><span class="p">)</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.287</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">gama</span><span class="p">))</span> <span class="o">*</span> 
+               <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.25</span><span class="o">*</span><span class="p">(</span><span class="n">freq</span><span class="o">/</span><span class="n">fp</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">))</span><span class="o">*</span><span class="n">gama</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="o">-</span><span class="p">(</span><span class="n">freq</span><span class="o">-</span><span class="n">fp</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">fp</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+    <span class="n">S_f</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">s_f</span>
+
+<span class="n">T1</span> <span class="o">=</span> <span class="mf">0.772</span><span class="o">*</span><span class="n">Tp</span>
+<span class="n">S_wPM</span> <span class="o">=</span> <span class="p">((</span><span class="mi">173</span><span class="o">*</span><span class="n">Hs</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">**</span><span class="mi">4</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">w</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="mi">692</span><span class="o">/</span><span class="p">(</span><span class="n">T1</span><span class="o">**</span><span class="mi">4</span><span class="p">))</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">S_fPM</span> <span class="o">=</span> <span class="n">S_wPM</span><span class="o">*</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span>
+<span class="n">S_w</span> <span class="o">=</span> <span class="n">S_f</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">S_w</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;JONSWAP&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">S_wPM</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pierson-Moskowitz Modificado&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Espectro JONSWAP e Pierson-Moskowitz - $H_s$ = </span><span class="si">{Hs}</span><span class="s1"> m e $T_1$ = </span><span class="si">{T1:.2f}</span><span class="s1"> s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Hs</span> <span class="o">=</span> <span class="n">Hs</span><span class="p">,</span> <span class="n">T1</span><span class="o">=</span><span class="n">Tz</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\omega$, rad/s&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$S_{\zeta}(\omega)$, m²/s&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mf">3.3</span><span class="o">**</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Parâmetro de pico&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\gamma$&#39;</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;top&#39;</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=-</span><span class="mi">10</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">RMS_PM</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S_wPM</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+<span class="n">RMS_J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S_w</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RMS para espectro de Pierson-Moskowitz: </span><span class="si">{</span><span class="n">RMS_PM</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;RMS para espectro de JONSWAP: </span><span class="si">{</span><span class="n">RMS_J</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/23bb2148c2a219e6cc04fc6385dfaa15976f1d29fcd327da606ae77db1bc634b.png" src="_images/23bb2148c2a219e6cc04fc6385dfaa15976f1d29fcd327da606ae77db1bc634b.png" />
+<img alt="_images/28c3997b897f9e83ad522d84a4f87059879e7be35c3cda04e617044b4b24e9c5.png" src="_images/28c3997b897f9e83ad522d84a4f87059879e7be35c3cda04e617044b4b24e9c5.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMS para espectro de Pierson-Moskowitz: 1.232
+RMS para espectro de JONSWAP: 1.235
+</pre></div>
+</div>
+</div>
+</div>
+<p>O parâmetro de pico reproduz a proeminência do espectro no período de pico espectral quando comparado ao espectro de Pierson-Moskowitz. Este parâmetro não altera quntidade de energia do espectro, entretanto ele desloca o pico do espectro além de acentuá-lo conforme aumenta.s.</p>
+</section>
+<span id="document-Lista_7-Q3"></span><section class="tex2jax_ignore mathjax_ignore" id="serie-temporal-bacia-de-campos">
+<h2>Série temporal - Bacia de Campos<a class="headerlink" href="#serie-temporal-bacia-de-campos" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">scipy.signal</span> <span class="kn">import</span> <span class="n">find_peaks</span><span class="p">,</span> <span class="n">argrelextrema</span>
+<span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">integrate</span>
+<span class="kn">from</span> <span class="nn">scipy.fft</span> <span class="kn">import</span> <span class="n">fft</span><span class="p">,</span> <span class="n">fftfreq</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s1">&#39;ON111011.xlsx&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">T_c</span> <span class="o">=</span> <span class="mi">64</span> <span class="c1"># Tempo de corte</span>
+
+<span class="c1"># 1  - Média do sinal temporal</span>
+<span class="n">zeta_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># 2 - Desvio padrão do sinal temporal</span>
+<span class="n">sig</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># 3 - Hs usando os primeiros 64 s da série temporal</span>
+<span class="n">S64</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">T_c</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">S64_ord</span> <span class="o">=</span> <span class="n">S64</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">S64</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">3</span><span class="p">)]</span>
+<span class="n">Hs_64</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">S64_ord</span><span class="p">)</span>
+<span class="n">sig_64</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">S64_ord</span><span class="p">)</span>
+<span class="c1"># 4 - Altura máxima por observação dos primeiros 64s da série temporal</span>
+<span class="n">Hmax_64</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">S64_ord</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># 5 - O período de zero ascendente médio usando valor inteiro de períodos em um total de 64 s</span>
+<span class="n">peaks</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">find_peaks</span><span class="p">(</span><span class="n">S64</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="n">t_ind</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">ind</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">S64</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span> 
+    <span class="k">if</span> <span class="n">ind</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">S64</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">S64</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">ind</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">t_ind</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ind</span><span class="p">)</span>
+            
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">T_c</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">S64</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="n">T_c</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">Tz_64</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">t</span><span class="p">[</span><span class="n">t_ind</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">t_ind</span><span class="p">][</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">t_ind</span><span class="p">]))</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># 6 - O período entre cristas usando valor inteiro de períodos em um total de 64 s</span>
+<span class="n">T_64</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">([</span><span class="n">t</span><span class="p">[</span><span class="n">peaks</span><span class="p">][</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">peaks</span><span class="p">][</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">peaks</span><span class="p">]))</span> <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># 7 e 8 - Espectro usando FFT + Alisamento usando janela de Hanning</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">fft</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">N</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">dw</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">w</span> <span class="o">=</span> <span class="n">fftfreq</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">dw</span><span class="p">)[:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">]</span>
+<span class="k">if</span> <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mf">0.0</span><span class="p">:</span>
+   <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.001</span>
+<span class="n">S</span> <span class="o">=</span> <span class="mf">2.0</span><span class="o">/</span><span class="n">N</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">N</span><span class="o">//</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">m</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">s</span> <span class="o">=</span> <span class="n">S</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">w</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">m</span><span class="p">):</span>
+    <span class="n">S_n</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+        <span class="p">[</span><span class="mf">0.5</span><span class="o">*</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="mf">0.25</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)]</span>
+    <span class="p">)</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="n">S_n</span>
+    <span class="n">w_n</span> <span class="o">=</span> <span class="n">W</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">W</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">W</span> <span class="o">=</span> <span class="n">w_n</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_n</span><span class="p">,</span> <span class="n">S_n</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Filtrado&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sem alisamento&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># 9 - Média usando resultado de 7</span>
+<span class="n">S_m</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">S</span><span class="p">))</span>
+
+<span class="c1"># 10 - Desvio padrão usando resultado de 7</span>
+<span class="n">sig_spc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+
+<span class="c1"># 11 - Hs usando usando resultado de 7</span>
+<span class="n">Hs_spc</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">sig_spc</span>
+
+<span class="c1"># 12 - Altura máxima usando resultado de 7</span>
+<span class="n">Hmax_spc</span> <span class="o">=</span> <span class="mf">1.86</span><span class="o">*</span><span class="n">Hs_spc</span>
+
+<span class="c1"># 13 - Período médio T1</span>
+<span class="n">T1_spc</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S</span><span class="o">*</span><span class="n">w</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+
+<span class="c1"># 14 - Período médio T2</span>
+<span class="n">T2_spc</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">w</span><span class="p">)))</span>
+
+<span class="c1"># 15 - Período de pico de 8 </span>
+<span class="n">Tp_spec</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">w_n</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">S_n</span><span class="o">==</span><span class="n">S_n</span><span class="o">.</span><span class="n">max</span><span class="p">())][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># 16 - Estimativa de largura espectral usando resultado de 7</span>
+<span class="n">T4_spec</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">4</span><span class="p">,</span> <span class="n">w</span><span class="p">)))</span>
+<span class="n">ep</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="n">T4_spec</span><span class="o">/</span><span class="n">T2_spc</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
+
+<span class="c1"># 17 - Comparar resultado de 7 com espectro PM modificado (ITTC) com resultados de 11 e 13</span>
+<span class="n">S_pm</span> <span class="o">=</span> <span class="p">((</span><span class="mi">173</span><span class="o">*</span><span class="n">Hs_spc</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">T1_spc</span><span class="o">**</span><span class="mi">4</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">w</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="mi">692</span><span class="o">/</span><span class="p">(</span><span class="n">T1_spc</span><span class="o">**</span><span class="mi">4</span><span class="p">))</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_n</span><span class="p">,</span> <span class="n">S_n</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Filtrado&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">S_pm</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pierson-Moskowitz Modificado&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># 18 - Obter período de pico através do espectro obtido em 17</span>
+<span class="n">Tp_pm</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">w_n</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">S_pm</span><span class="o">==</span><span class="n">S_pm</span><span class="o">.</span><span class="n">max</span><span class="p">())][</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># 19 - Definir os parâmetros do espectro JONSWAPs à maneira do CENPES</span>
+<span class="n">gama</span> <span class="o">=</span> <span class="mf">6.4</span><span class="o">*</span><span class="n">Tp_spec</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.491</span><span class="p">)</span>
+<span class="n">Tz_j</span> <span class="o">=</span> <span class="n">Tp_spec</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="mi">5</span><span class="o">+</span><span class="n">gama</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mf">10.89</span><span class="o">+</span><span class="n">gama</span><span class="p">))</span>
+
+
+<span class="n">f</span> <span class="o">=</span> <span class="n">w</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="n">Sj_f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="n">fp</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">Tp_spec</span>
+<span class="k">for</span> <span class="n">freq</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">ind</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">f</span> <span class="o">==</span> <span class="n">freq</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">freq</span> <span class="o">&lt;=</span> <span class="n">fp</span><span class="p">:</span>
+        <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.07</span>
+        <span class="n">s_f</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">Hs_spc</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">Tp_spec</span> <span class="o">*</span> <span class="p">((</span><span class="n">fp</span><span class="o">/</span><span class="n">freq</span><span class="p">)</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.287</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">gama</span><span class="p">))</span> <span class="o">*</span> 
+               <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.25</span><span class="o">*</span><span class="p">(</span><span class="n">freq</span><span class="o">/</span><span class="n">fp</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">))</span><span class="o">*</span><span class="n">gama</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="o">-</span><span class="p">(</span><span class="n">freq</span><span class="o">-</span><span class="n">fp</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">fp</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sigma</span> <span class="o">=</span> <span class="mf">0.09</span>
+        <span class="n">s_f</span> <span class="o">=</span> <span class="p">(</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">16</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">Hs_spc</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">Tp_spec</span> <span class="o">*</span> <span class="p">((</span><span class="n">fp</span><span class="o">/</span><span class="n">freq</span><span class="p">)</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.287</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">gama</span><span class="p">))</span> <span class="o">*</span> 
+               <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mf">1.25</span><span class="o">*</span><span class="p">(</span><span class="n">freq</span><span class="o">/</span><span class="n">fp</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">))</span><span class="o">*</span><span class="n">gama</span><span class="o">**</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="o">-</span><span class="p">(</span><span class="n">freq</span><span class="o">-</span><span class="n">fp</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">sigma</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">fp</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+    <span class="n">Sj_f</span><span class="p">[</span><span class="n">ind</span><span class="p">]</span> <span class="o">=</span> <span class="n">s_f</span>
+<span class="n">Sj_w</span> <span class="o">=</span> <span class="n">Sj_f</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+<span class="c1"># plt.plot(w_n, S_n, color=&#39;k&#39;, label=&#39;Filtrado&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">Sj_w</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;JONSWAP&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w_n</span><span class="p">,</span> <span class="n">S_n</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Filtrado&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">S_pm</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Pierson-Moskowitz Modificado&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># 20 - Tabelas comparativas</span>
+<span class="n">sig_PM</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S_pm</span><span class="p">,</span> <span class="n">w</span><span class="p">)))</span>
+<span class="n">Hs_PM</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">sig_PM</span>
+<span class="n">T1_PM</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S_pm</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S_pm</span><span class="o">*</span><span class="n">w</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+<span class="n">T2_PM</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S_pm</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">S_pm</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">w</span><span class="p">)))</span>
+<span class="n">sig_J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">Sj_w</span><span class="p">,</span> <span class="n">w</span><span class="p">)))</span>
+<span class="n">Hs_J</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">sig_J</span>
+<span class="n">T1_J</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">Sj_w</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">Sj_w</span><span class="o">*</span><span class="n">w</span><span class="p">,</span> <span class="n">w</span><span class="p">))</span>
+<span class="n">T2_J</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">Sj_w</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span><span class="o">/</span><span class="n">integrate</span><span class="o">.</span><span class="n">simpson</span><span class="p">(</span><span class="n">Sj_w</span><span class="o">*</span><span class="n">w</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">w</span><span class="p">)))</span>
+                  
+<span class="nb">dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Série temporal - 64 s&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">Hs_64</span><span class="p">,</span> <span class="n">sig_64</span><span class="p">,</span> <span class="n">T_64</span><span class="p">,</span> <span class="n">Tz_64</span><span class="p">],</span> 
+        <span class="s2">&quot;Espectro - FFT&quot;</span><span class="p">:</span>        <span class="p">[</span><span class="n">Hs_spc</span><span class="p">,</span> <span class="n">sig_spc</span><span class="p">,</span> <span class="n">T1_spc</span><span class="p">,</span> <span class="n">T2_spc</span><span class="p">],</span> 
+        <span class="s2">&quot;Pierson-Moskowitz&quot;</span><span class="p">:</span>     <span class="p">[</span><span class="n">Hs_PM</span><span class="p">,</span> <span class="n">sig_PM</span><span class="p">,</span> <span class="n">T1_PM</span><span class="p">,</span> <span class="n">T2_PM</span><span class="p">],</span> 
+        <span class="s2">&quot;JONSWAP&quot;</span><span class="p">:</span>               <span class="p">[</span><span class="n">Hs_J</span><span class="p">,</span> <span class="n">sig_J</span><span class="p">,</span> <span class="n">T1_J</span><span class="p">,</span> <span class="n">T2_J</span><span class="p">]}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="sa">r</span><span class="s2">&quot;$H_s$ , m&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$\sigma$&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$T_1$ , s&quot;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&quot;$T_z$ , s&quot;</span><span class="p">])</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7c4bd370074ce75cfef4a5a92f92cb02685da5baf559a13fdb4e52b82d59e6ac.png" src="_images/7c4bd370074ce75cfef4a5a92f92cb02685da5baf559a13fdb4e52b82d59e6ac.png" />
+<img alt="_images/b7cc835e44d311dd521f0b048d4e5aca0a93bd9dc29867a157aeab27dadebc46.png" src="_images/b7cc835e44d311dd521f0b048d4e5aca0a93bd9dc29867a157aeab27dadebc46.png" />
+<img alt="_images/8c21934ce3b6c97ca57723bcb265af64ae93f5e35786e64664dbc89fb84af76a.png" src="_images/8c21934ce3b6c97ca57723bcb265af64ae93f5e35786e64664dbc89fb84af76a.png" />
+<img alt="_images/cfaa43a741114053fe0a51a1628c0f95eeedbd05981500c61e34258889efba9c.png" src="_images/cfaa43a741114053fe0a51a1628c0f95eeedbd05981500c61e34258889efba9c.png" />
+<img alt="_images/d19fdb6e6b639995f48e272c4a266a087339186d747aff48e7cfe0b1d36d386a.png" src="_images/d19fdb6e6b639995f48e272c4a266a087339186d747aff48e7cfe0b1d36d386a.png" />
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Série temporal - 64 s</th>
+      <th>Espectro - FFT</th>
+      <th>Pierson-Moskowitz</th>
+      <th>JONSWAP</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>$H_s$ , m</th>
+      <td>0.504762</td>
+      <td>0.818708</td>
+      <td>0.811136</td>
+      <td>0.817293</td>
+    </tr>
+    <tr>
+      <th>$\sigma$</th>
+      <td>0.133698</td>
+      <td>0.204677</td>
+      <td>0.202784</td>
+      <td>0.204323</td>
+    </tr>
+    <tr>
+      <th>$T_1$ , s</th>
+      <td>3.470588</td>
+      <td>4.434663</td>
+      <td>4.601729</td>
+      <td>8.410580</td>
+    </tr>
+    <tr>
+      <th>$T_z$ , s</th>
+      <td>4.416667</td>
+      <td>3.923538</td>
+      <td>4.392566</td>
+      <td>7.899064</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista7.html#document-Lista_7-Q1">Espectro de Pierson-Moskowitz Modificado</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista7.html#document-Lista_7-Q2">Espectro JONSWAP (Joint North Sea Wave Project) da Bacia de Campos</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista7.html#document-Lista_7-Q3">Série temporal - Bacia de Campos</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Evandro F. de Paula Filho
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
